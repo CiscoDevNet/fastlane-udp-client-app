@@ -13,4 +13,6 @@ Check setupSocket method (uncomment a part of code, responsible for marking) and
 * NET_SERVICE_TYPE_OAM
 * NET_SERVICE_TYPE_RD
 
-## 3. Compile project and run it on your iOS device
+## 2. Compile project and run it on your iOS device
+
+## 3. Make sure you are on the a Fast Lane Enabled network.
