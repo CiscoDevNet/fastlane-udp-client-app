@@ -36,7 +36,17 @@ You now have the code available locally on your Mac.
 
 Remember this is a UDP client. iOS 10+ SDK defines the following for UDP sockets:
 
+
+
+Check ***_setupSocket_*** method (uncomment a part of code, responsible for marking) and Set one of the above service type options for marking the socket for `optval` variable:
+
 ```
+
+/ Choose from one the following service types
+// Hint: For the UDP Client here it will be NET_SERVICE_TYPE_RD
+//
+
+/*
 * NET_SERVICE_TYPE_BE
 * NET_SERVICE_TYPE_BK
 * NET_SERVICE_TYPE_VI
@@ -45,14 +55,10 @@ Remember this is a UDP client. iOS 10+ SDK defines the following for UDP sockets
 * NET_SERVICE_TYPE_AV
 * NET_SERVICE_TYPE_OAM
 * NET_SERVICE_TYPE_RD
+* /
 
-```
-
-Check ***_setupSocket_*** method (uncomment a part of code, responsible for marking) and Set one of the above service type options for marking the socket for `optval` variable:
-
-```
-optval = NET_SERVICE_TYPE_VO;
-        optlen = sizeof(optval);
+optval = NET_SERVICE_TYPE_BE; /* defualt */
+         optlen = sizeof(optval);
         if(setsockopt(socketFD, SOL_SOCKET, SO_NET_SERVICE_TYPE, &optval, optlen) < 0) {
             perror("setsockopt()");
         }
