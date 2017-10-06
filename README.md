@@ -42,7 +42,7 @@ Check ***_setupSocket_*** method (uncomment a part of code, responsible for mark
 
 ```
 
-/ Choose from one the following service types
+// Choose from one the following service types
 // Hint: For the UDP Client here it will be NET_SERVICE_TYPE_RD
 //
 
@@ -57,7 +57,7 @@ Check ***_setupSocket_*** method (uncomment a part of code, responsible for mark
 * NET_SERVICE_TYPE_RD
 * /
 
-optval = NET_SERVICE_TYPE_BE; /* defualt */
+optval = NET_SERVICE_TYPE_BE; /* default */
          optlen = sizeof(optval);
         if(setsockopt(socketFD, SOL_SOCKET, SO_NET_SERVICE_TYPE, &optval, optlen) < 0) {
             perror("setsockopt()");
